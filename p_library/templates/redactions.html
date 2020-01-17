@@ -1,0 +1,21 @@
+{% extends "base_templ.html" %}
+
+{% block title %}<title>Издательства</title>{% endblock %}
+
+{% block content %}
+  <h1 style="text-align: center;">Список издательств</h1>
+  <div>
+    <ul  class="list-group">
+      {% for publishing in publishings %}
+        <li class="list-group-item bg-secondary text-white">{{ publishing }}</li>
+          <ul>
+            {% for book in books %}
+              {% ifequal  book.publishing publishing %}
+                <li>{{ book.title }}</li>
+              {% endifequal %}
+            {% endfor %}
+          </ul>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

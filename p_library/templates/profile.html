@@ -1,0 +1,17 @@
+{% extends "base_templ.html" %}
+
+{% block title %}<title>Домашняя библиотека|Авторы</title>{% endblock %}
+{% load i18n %}
+{% block content %}
+
+<h1>{{ title }} пользователя {{ username }}</h1>
+
+<div class="row">
+    <div class="col">
+        <a class="btn btn-success" href="/accounts/email/">Настроить Email</a>
+    </div>
+    <div class="col">
+        <a class="btn btn-success" href="/accounts/social/connections/">Ваши Аккаунты</a>
+    </div>
+</div>
+{% endblock %}

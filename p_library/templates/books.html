@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Книги</title>{% endblock %}
+
+{% block content %}
+<h1>Список всех {{ books|length }} книг</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Автор</td>
+                <td>Название книги</td>
+                <td>Изображение</td>
+                <td>Описание</td>
+                <td>Издательство</td>
+                {% comment %}<td></td>{% endcomment %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.author.full_name }}</td>
+                <td>{{ book.title }}</td>
+                <td><img src="/media/{{ book.cover }}" alt="Book picture" width="80px"></td>
+                <td>{{ book.description }}</td><td>{{ book.redaction }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

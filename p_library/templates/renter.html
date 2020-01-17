@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Отданные книги</title>{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">Отданные книги</h1>
+    <div>
+        <ul  class="list-group">
+        {% for rb in rented_books %}
+            <li  class="list-group-item bg-secondary text-white">
+                Книгу <strong>{{ rb.rented_book }}</strong> взял <strong>{{ rb.book_renter }}</strong> до <strong>{{ rb.return_date }}</strong>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
